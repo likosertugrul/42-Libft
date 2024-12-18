@@ -1,14 +1,15 @@
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 FLAG = -Wall -Wextra -Werror
 
-SRC = ft_print_hex.c  ft_print_ptr.c ft_print_unsigned.c ft_print_helpers.c ft_printf.c
+SRC = ft_print_hex.c  ft_print_ptr.c ft_print_unsigned.c ft_print_helpers.c ft_printf.c \
+		ft_strlen.c ft_putchar.c ft_putstr.c ft_printstr.c ft_strlcpy.c 
 
 OBJ = $(SRC:.c=.o)
 
 
 $(NAME) : 
-	gcc $(FLAG) -c $(SRC)
+	cc $(FLAG) -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 
 all : $(NAME)
@@ -22,7 +23,7 @@ fclean : clean
 re : fclean all
 
 run : re
-	gcc $(FLAG) main.c ft_printf.a
+	cc $(FLAG) main.c ft_printf.a
 	make fclean
 	clear
 	./a.out
@@ -33,10 +34,3 @@ push :
 	git push
 
 .PHONY : all clean fclean re 	
-
-
-
-
-
-
-	

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: elikos <elikos@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/18 20:40:27 by elikos            #+#    #+#             */
+/*   Updated: 2024/12/18 20:43:20 by elikos           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_hex_len(unsigned int num)
+int	ft_hex_len(unsigned int num)
 {
 	int	len;
 
@@ -11,10 +23,9 @@ int ft_hex_len(unsigned int num)
 		num = num / 16;
 	}
 	return (len);
-	
 }
 
-void ft_put_hex(unsigned int num, const char hex_case)
+void	ft_put_hex(unsigned int num, const char hex_case)
 {
 	if (num >= 16)
 	{
@@ -37,15 +48,15 @@ void ft_put_hex(unsigned int num, const char hex_case)
 	}
 }
 
-int ft_print_hex(unsigned int num, const char hex_case)
+int	ft_print_hex(unsigned int num, const char hex_case)
 {
-    if (num == 0)
-    {
-        return (write(1, "0", 1));
-    }
-    else
-    {
-        ft_put_hex(num, hex_case);
-    }
-    return (ft_hex_len(num));
+	if (num == 0)
+	{
+		return (write(1, "0", 1));
+	}
+	else
+	{
+		ft_put_hex(num, hex_case);
+	}
+	return (ft_hex_len(num));
 }

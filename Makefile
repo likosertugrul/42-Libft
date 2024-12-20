@@ -23,7 +23,7 @@ fclean : clean
 re : fclean all
 
 run : re
-	cc $(FLAG) main.c ft_printf.a
+	cc $(FLAG) main.c libftprintf.a
 	make fclean
 	clear
 	./a.out

@@ -6,7 +6,7 @@
 /*   By: elikos <elikos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 20:48:59 by elikos            #+#    #+#             */
-/*   Updated: 2024/12/19 22:32:16 by elikos           ###   ########.fr       */
+/*   Updated: 2024/12/20 20:19:28 by elikos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	ft_print_ptr(unsigned long long ptr)
 	print_length += write(1, "0x", 2);
 	if (ptr == 0)
 		print_length += write(1, "0", 1);
-
 	else
 	{
 		ft_put_ptr(ptr);
